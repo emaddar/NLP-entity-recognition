@@ -1,7 +1,3 @@
-# NLP-entity-recognition
-Brief Agile NLP
----
-
 # Projet Agile NLP - Entity Recognition
 ## Description
 Ce projet consiste en une étude de faisabilité sur les usages innovants liés au NLP dans le secteur bancaire. Plus précisément, il s'agit de réaliser une veille technologique ainsi qu'une preuve de concept liée à la tâche d'Entity Recognition en utilisant une approche Agile.
