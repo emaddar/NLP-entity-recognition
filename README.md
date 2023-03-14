@@ -1,4 +1,5 @@
 # Projet Agile NLP - Entity Recognition
+![]("https://www.asksid.ai/wp-content/uploads/2021/02/an-introduction-to-natural-language-processing-with-python-for-seos-5f3519eeb8368.png")
 ## Description
 Ce projet consiste en une étude de faisabilité sur les usages innovants liés au NLP dans le secteur bancaire. Plus précisément, il s'agit de réaliser une veille technologique ainsi qu'une preuve de concept liée à la tâche d'Entity Recognition en utilisant une approche Agile.
 
