@@ -52,7 +52,7 @@ st.title("Named Entity Recognition (NER)")
 with st.sidebar:
     
     model = st.radio(
-    "Choose language",
+    "Model",
     ('En_Spacy', 'Fr_Spacy', 'Fr_Spacy_with_our_annotated_data'))
 
     #nlp = spacy.load('en_core_web_sm')
