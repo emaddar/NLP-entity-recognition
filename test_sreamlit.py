@@ -46,15 +46,25 @@ st.title("Named Entity Recognition (NER)")
 
 with st.sidebar:
     
-    lang = st.radio(
+    model = st.radio(
     "Choose language",
-    ('En', 'Fr'))
+    ('En_Spacy', 'Fr_Spacy', 'Fr_Spacy_with_our_annotated_data'))
 
     #nlp = spacy.load('en_core_web_sm')
-    if lang == 'En':
+    if model == 'En_Spacy':
         nlp = spacy.load("./models/en/")
-    else :
+    elif model == 'Fr_Spacy' :
         nlp = spacy.load("./models/fr/")
+    elif model == 'Fr_Spacy_with_our_annotated_data':
+        nlp = spacy.load("./models/Spacy_with_Our_annotated_data/model-best/")
+    
+    st.markdown("""---""")
+    if model == 'En_Spacy':
+        st.error('By selecting this particular model, you have opted to utilize the Spacy pretrained model known as "en_core_web_sm."', icon="🚨")
+    elif model == 'Fr_Spacy':
+        st.error('By selecting this particular model, you have opted to utilize the Spacy pretrained model known as "fr_core_web_sm."', icon="🚨")
+    elif model == 'Fr_Spacy_with_our_annotated_data':
+        st.error('By selecting this specific model, you have chosen to utilize our Custom Named Entity Recognition (NER) model that is based on the spaCy library. Our model has been developed through the training of a machine learning algorithm using a dataset consisting of 10 French financial reports.', icon="🚨")
 
 input_text = st.text_area('Input text to analyze:', '“OpenText demonstrated outstanding execution and delivered record Q1 revenues and enterprise cloud bookings, up 37% Y/Y, amidst a dynamic macro environment,” said Mark J. Barrenechea, OpenText CEO & CTO. “Total revenues of $852 million grew 2.4% year-over-year or 7.1% in constant currency. Cloud revenues of $405 million grew 13.5% year-over-year or 16.9% in constant currency, driven by increased cloud consumption. Annual recurring revenues of $722 million grew 4.4% year-overyear or 8.9% in constant currency, representing 85% of total revenues and achieving seven consecutive quarters of cloud and ARR organic growth in constant currency.”')
 
