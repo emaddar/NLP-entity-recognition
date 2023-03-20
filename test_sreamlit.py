@@ -32,6 +32,11 @@ import streamlit as st
 import spacy
 from spacy import displacy
 
+
+st.set_page_config(
+     page_title="🇳 🇪 🇷 Named Entity Recognition",
+     page_icon="📝")
+
 st.title("Named Entity Recognition (NER)")
 
 
