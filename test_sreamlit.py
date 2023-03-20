@@ -95,14 +95,17 @@ if button:
     grouped_df = df.groupby('entity_label').count()
     grouped_df = grouped_df.rename(columns={'entity_text': 'number'}).reset_index().rename(columns={'entity_label': 'entity'})
 
+    # check if df is empty
+    if len(grouped_df) >= 1 :
+        col1, col2 = st.columns(2)
+        col1.write(grouped_df)
 
-    col1, col2 = st.columns(2)
-    col1.write(grouped_df)
+        with col2:
+            import seaborn as sns
+            import matplotlib.pyplot as plt
 
-    with col2:
-        import seaborn as sns
-        import matplotlib.pyplot as plt
-
-        fig = plt.figure()
-        sns.barplot(grouped_df, x= "entity", y = 'number')
-        st.pyplot(fig)
+            fig = plt.figure()
+            sns.barplot(grouped_df, x= "entity", y = 'number')
+            st.pyplot(fig)
+    else : 
+        st.warning('This model can not identify any entity', icon="⚠️")
