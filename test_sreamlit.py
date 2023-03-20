@@ -105,4 +105,4 @@ if button:
 
         fig = plt.figure()
         sns.barplot(grouped_df, x= "entity", y = 'number')
-        st.pyplot(fig,use_container_width=True)
+        st.pyplot(fig)
