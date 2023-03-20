@@ -35,7 +35,7 @@ from spacy import displacy
 
 st.set_page_config(
      page_title="🇳 🇪 🇷 Named Entity Recognition",
-     page_icon=":guardsman:")
+     page_icon=":orange_book:")
 
 st.title("Named Entity Recognition (NER)")
 
