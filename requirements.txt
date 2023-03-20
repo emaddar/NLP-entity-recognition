@@ -1,2 +1,5 @@
 streamlit
 spacy
+pandas
+seaborn
+matplotlib
