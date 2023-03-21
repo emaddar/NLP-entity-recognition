@@ -31,6 +31,7 @@
 import streamlit as st
 import spacy
 from spacy import displacy
+from langdetect import detect
 
 
 st.set_page_config(
@@ -73,9 +74,12 @@ with st.sidebar:
 
 input_text = st.text_area('Input text to analyze:', '“OpenText demonstrated outstanding execution and delivered record Q1 revenues and enterprise cloud bookings, up 37% Y/Y, amidst a dynamic macro environment,” said Mark J. Barrenechea, OpenText CEO & CTO. “Total revenues of $852 million grew 2.4% year-over-year or 7.1% in constant currency. Cloud revenues of $405 million grew 13.5% year-over-year or 16.9% in constant currency, driven by increased cloud consumption. Annual recurring revenues of $722 million grew 4.4% year-overyear or 8.9% in constant currency, representing 85% of total revenues and achieving seven consecutive quarters of cloud and ARR organic growth in constant currency.”')
 
+
 button = st.button("Apply Function")
 
 if button:
+    language = detect(input_text)
+    st.markdown(f"""lang detected : `{language}`""")
         
     doc= nlp(input_text)
 
