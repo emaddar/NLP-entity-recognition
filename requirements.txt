@@ -3,3 +3,4 @@ spacy
 pandas
 seaborn
 matplotlib
+langdetect
